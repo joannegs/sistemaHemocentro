@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controlador.ControladorTelaUsuario">
+   <children>
+      <ChoiceBox fx:id="opc" layoutX="332.0" layoutY="55.0" prefWidth="150.0" />
+      <Button fx:id="catchOpc" layoutX="490.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#abrirPaneEscolhido" text="Ok" />
+      <Label layoutX="318.0" layoutY="25.0" text="Escolha a opção que deseja realizar:" />
+      <TitledPane fx:id="opcAtualizarInformacoesDeCadastro" animated="false" layoutX="27.0" layoutY="114.0" prefHeight="427.0" prefWidth="835.0" text="Atualização de cadastro de doadores" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="opcQualAtualizarInformacoesCadastro" layoutX="275.0" layoutY="50.0" prefWidth="150.0" />
+                  <Label layoutX="135.0" layoutY="14.0" text="Selecione a informação que deseja atualizar e seu CPF para confirmar a alteração:" />
+                  <Button fx:id="catchOpcAtualizarInformacoesCadastro" layoutX="456.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#abrirPaneEscolhidoAlteracao" text="Ok" />
+                  <TitledPane fx:id="opcNome" animated="false" layoutX="229.0" layoutY="119.0" prefHeight="223.0" prefWidth="391.0" text="Nome" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novoNome" layoutX="101.0" layoutY="33.0" promptText="Novo nome" />
+                              <Button fx:id="atualizarNome" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarNomeUsuario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcCpf" animated="false" layoutX="239.0" layoutY="129.0" prefHeight="223.0" prefWidth="391.0" text="CPF" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novoCpf" layoutX="101.0" layoutY="33.0" promptText="Novo CPF" />
+                              <Button fx:id="atualizarCpf" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarCpfUsuario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcIdade" animated="false" layoutX="229.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Idade" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="atualizarIdade" layoutX="125.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#atualizarIdadeUsuario" text="Atualizar idade" />
+                              <Label layoutX="82.0" layoutY="31.0" text="Ao atualizar sua idade, ela será" />
+                              <Label layoutX="113.0" layoutY="52.0" text="acrescida em um ano" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcSenha" animated="false" layoutX="229.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Senha" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novaSenha" layoutX="101.0" layoutY="33.0" promptText="Nova senha" />
+                              <Button fx:id="atualizarSenha" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarSenhaUsuario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcGenero" animated="false" layoutX="239.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Gênero" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="atualizarGenero" layoutX="129.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarGeneroUsuario" text="Alterar genero" />
+                              <Label layoutX="107.0" layoutY="26.0" text="Alterar seu gênero para " />
+                              <Label layoutX="130.0" layoutY="47.0" text="o gênero oposto:" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcTipoSanguineo" animated="false" layoutX="239.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Tipo sanguíneo" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="atualizarTipoSanguineo" layoutX="242.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#atualizarTipoSanguineoUsuario" text="OK" />
+                              <ChoiceBox fx:id="tipoSanguineo" layoutX="88.0" layoutY="49.0" prefHeight="31.0" prefWidth="174.0" />
+                              <Label layoutX="88.0" layoutY="14.0" text="Tipo sanguíneo:" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcAgendamentoDeDoacao" animated="false" layoutX="37.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Agendamento de doação" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <DatePicker fx:id="dataAgendamento" layoutX="295.0" layoutY="88.0" />
+                  <Button fx:id="agendarDoacao" layoutX="483.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#agendarDoacao" text="Agendar" />
+                  <Label layoutX="226.0" layoutY="48.0" text="Selecione a data na qual gostaria de agendar sua doação:" />
+                  <Label layoutX="442.0" layoutY="349.0" text="Não esqueça de trazer os documentos no dia da doação!">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcVisualizarFichasMedicas" animated="false" layoutX="27.0" layoutY="114.0" prefHeight="427.0" prefWidth="835.0" text="Visualização de fichas médicas" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="273.0" layoutY="14.0" />
+                  <TableView fx:id="tabelaVisualizacaoDeFichasMedicas" layoutX="3.0" prefHeight="396.0" prefWidth="827.0">
+                     <columns>
+                        <TableColumn fx:id="hemoglobina" prefWidth="144.0" text="Hemoglobina" />
+                        <TableColumn fx:id="pressaoArterial" prefWidth="129.0" text="Pressão arterial" />
+                        <TableColumn fx:id="temperaturaCorporal" minWidth="0.0" prefWidth="172.0" text="Temperatura corporal" />
+                        <TableColumn fx:id="peso" minWidth="0.0" prefWidth="65.0" text="Peso" />
+                        <TableColumn fx:id="altura" prefWidth="65.0" text="Altura" />
+                        <TableColumn fx:id="pulso" prefWidth="73.0" text="Pulso" />
+                        <TableColumn fx:id="volumeDoSangue" prefWidth="169.0" text="Volume de sangue" />
+                     </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <Label fx:id="sair" layoutX="407.0" layoutY="93.0" onMouseClicked="#sair" text="Sair" textAlignment="CENTER" textFill="#4f14ff" underline="true" />
+   </children>
+</Pane>

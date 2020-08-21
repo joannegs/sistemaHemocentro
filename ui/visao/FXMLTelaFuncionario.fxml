@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controlador.ControladorTelaFuncionario">
+   <children>
+      <ChoiceBox fx:id="opcFuncionario" layoutX="361.0" layoutY="55.0" prefWidth="150.0" />
+      <Label layoutX="341.0" layoutY="27.0" text="Escolha a opção que deseja realizar:" />
+      <Button fx:id="catchOpcFunc" layoutX="522.0" layoutY="55.0" mnemonicParsing="false" onAction="#abrirOpcEscolhida" text="Ok" />
+      <TitledPane fx:id="paneAtualizarCD" animated="false" layoutX="230.0" layoutY="114.0" prefHeight="427.0" prefWidth="430.0" text="Atualização de cadastro de doadores" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="opcAtualizarDadosDoador" layoutX="79.0" layoutY="65.0" prefWidth="150.0" />
+                  <TextField fx:id="txtCpfVerificar" layoutX="80.0" layoutY="97.0" promptText="CPF do Doador" />
+                  <Button fx:id="catchAtualizarDadoDoador" layoutX="255.0" layoutY="65.0" mnemonicParsing="false" onAction="#abrirTelaAtualizacao" text="OK" />
+                  <Label layoutX="37.0" layoutY="36.0" text="Selecione a informação que deseja atualizar:" />
+                  <Button fx:id="catchAttGenero" layoutX="245.0" layoutY="97.0" mnemonicParsing="false" onAction="#atualizarGenero" text="Salvar" visible="false" />
+                  <Button fx:id="catchAttIdade" layoutX="243.0" layoutY="97.0" mnemonicParsing="false" onAction="#atualizarIdade" text="Salvar" visible="false" />
+                  <TitledPane fx:id="paneAttNome" animated="false" layoutX="80.0" layoutY="157.0" prefHeight="188.0" prefWidth="223.0" text="Nome" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtNovoNome" layoutX="14.0" layoutY="37.0" promptText="Novo nome" />
+                              <Button fx:id="catchAttNome" layoutX="147.0" layoutY="86.0" mnemonicParsing="false" onAction="#atualizarNome" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="paneAttCpf" animated="false" layoutX="93.0" layoutY="162.0" prefHeight="177.0" prefWidth="198.0" text="CPF" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtNovoCpf" layoutX="14.0" layoutY="46.0" promptText="Novo CPF" />
+                              <Button fx:id="catchAttCpf" layoutX="147.0" layoutY="99.0" mnemonicParsing="false" onAction="#atualizarCpf" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="paneAttSenha" animated="false" layoutX="98.0" layoutY="168.0" prefHeight="186.0" prefWidth="189.0" text="Senha" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtNovaSenha" layoutX="14.0" layoutY="25.0" promptText="Nova senha" />
+                              <Button fx:id="catchAttSenha" layoutX="130.0" layoutY="74.0" mnemonicParsing="false" onAction="#atualizarSenha" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="paneAttTipoSanguineo" animated="false" layoutX="108.0" layoutY="177.0" prefHeight="168.0" prefWidth="170.0" text="Tipo sanguíneo" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="catchAttTipoSanguineo" layoutX="111.0" layoutY="72.0" mnemonicParsing="false" onAction="#atuaizarTipoSanguineo" text="Salvar" />
+                              <ChoiceBox fx:id="opcAttTipoSanguineo" layoutX="29.0" layoutY="25.0" prefHeight="17.0" prefWidth="82.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneAgendarDoacao" animated="false" layoutX="37.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Agendamento de doação" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="cpfDoadorAgendamento" layoutX="314.0" layoutY="176.0" />
+                  <DatePicker fx:id="dataAgendamento" layoutX="295.0" layoutY="88.0" />
+                  <Button fx:id="agendarDoacao" layoutX="469.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#agendarDoacao" text="Agendar" />
+                  <Label layoutX="226.0" layoutY="48.0" text="Selecione a data na qual gostaria de agendar sua doação:" />
+                  <Label layoutX="262.0" layoutY="147.0" text="Insira seu CPF para confirmar o cadastro:" />
+                  <Label layoutX="442.0" layoutY="349.0" text="Não esqueça de trazer os documentos no dia da doação!">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneExibirFichasMedicas" animated="false" layoutX="27.0" layoutY="114.0" prefHeight="427.0" prefWidth="835.0" text="Visualização de fichas médicas" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabelaFichasMedicas" layoutX="3.0" prefHeight="396.0" prefWidth="827.0">
+                     <columns>
+                        <TableColumn fx:id="hemoglobinaListagemFichas" prefWidth="110.0" text="Hemoglobina" />
+                        <TableColumn fx:id="pressaoArterialListagemFichas" prefWidth="121.0" text="Pressão arterial" />
+                        <TableColumn fx:id="temperaturaCorporalListagemFichas" minWidth="0.0" prefWidth="167.0" text="Temperatura corporal" />
+                        <TableColumn fx:id="pesoListagemFichas" minWidth="0.0" prefWidth="53.0" text="Peso" />
+                        <TableColumn fx:id="alturaListagemFichas" prefWidth="73.0" text="Altura" />
+                        <TableColumn fx:id="pulsoListagemFichas" minWidth="0.0" prefWidth="83.0" text="Pulso" />
+                        <TableColumn fx:id="volumeDoSangueListagemFichas" minWidth="0.0" prefWidth="100.0" text="Volume" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneCadastroDoador" animated="false" layoutX="121.0" layoutY="100.0" prefHeight="456.0" prefWidth="630.0" text="Cadastrar doador" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtNome" layoutX="14.0" layoutY="25.0" promptText="Nome" />
+                  <TextField fx:id="txtCpf" layoutX="14.0" layoutY="69.0" promptText="CPF" />
+                  <TextField fx:id="intIdade" layoutX="14.0" layoutY="108.0" promptText="Idade" />
+                  <ChoiceBox fx:id="opcTipoSanguineo" layoutX="393.0" layoutY="66.0" prefHeight="17.0" prefWidth="53.0" />
+                  <ChoiceBox fx:id="opcGenero" layoutX="201.0" layoutY="66.0" prefHeight="25.0" prefWidth="137.0" />
+                  <Button fx:id="butoncadastrarDoador" layoutX="547.0" layoutY="379.0" mnemonicParsing="false" onAction="#cadastrarDoador" text="Cadastrar" />
+                  <Label layoutX="238.0" layoutY="29.0" text="Gênero:" />
+                  <Label layoutX="377.0" layoutY="29.0" text="Tipo sanguíneo:" />
+                  <PasswordField fx:id="txtSenha" layoutX="14.0" layoutY="152.0" promptText="Senha" />
+                  <Label layoutX="209.0" layoutY="126.0" text="Doador de Medula :">
+                     <font>
+                        <Font name="Constantia Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <RadioButton layoutX="208.0" layoutY="156.0" mnemonicParsing="false" text="Sim">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupDoadorMedula" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="270.0" layoutY="156.0" mnemonicParsing="false" text="Não" toggleGroup="$groupDoadorMedula" />
+                  <TitledPane fx:id="paneFormularioDM" animated="false" layoutX="1.0" layoutY="186.0" prefHeight="243.0" prefWidth="543.0" text="Formulário de Doação de Medula" visible="false">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="535.0">
+                           <children>
+                              <TextField fx:id="txtNacionalidade" layoutX="14.0" layoutY="14.0" promptText="Nacionalidade" />
+                              <TextField fx:id="txtNomeMae" layoutX="14.0" layoutY="53.0" prefHeight="25.0" prefWidth="189.0" promptText="Nome Completo da Mãe" />
+                              <TextField fx:id="txtNomePai" layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="189.0" promptText="Nome Completo do Pai" />
+                              <TextField fx:id="txtEndereco" layoutX="14.0" layoutY="128.0" promptText="Endereço" />
+                              <TextField fx:id="txtTelefone" layoutX="14.0" layoutY="168.0" promptText="Telefone" />
+                              <ChoiceBox fx:id="opcRaca" layoutX="262.0" layoutY="41.0" prefHeight="9.0" prefWidth="150.0" />
+                              <Label layoutX="323.0" layoutY="18.0" text="Raça" />
+                              <Button fx:id="catchFormularioDM" layoutX="412.0" layoutY="141.0" mnemonicParsing="false" onAction="#cadastrarDM" text="Salvar" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneApagarCadastroDoador" animated="false" layoutX="300.0" layoutY="177.0" prefHeight="214.0" prefWidth="289.0" text="Apagar cadastro de doador" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtCpfApagar" layoutX="24.0" layoutY="46.0" promptText="CPF" />
+                  <Label layoutX="24.0" layoutY="23.0" text="Digite o CPF do doador que deseja remover:" />
+                  <Button fx:id="removerDoador" layoutX="188.0" layoutY="122.0" mnemonicParsing="false" onAction="#removerDoador" text="Remover" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneExibirDoadores" animated="false" layoutX="31.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Listar doadores" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabelaDoadores" layoutX="7.0" layoutY="7.0" prefHeight="382.0" prefWidth="819.0">
+                    <columns>
+                      <TableColumn fx:id="nomeDoadorListagem" prefWidth="198.0" text="Nome" />
+                      <TableColumn fx:id="cpfDoadorListagem" minWidth="3.0" prefWidth="155.0" text="CPF" />
+                        <TableColumn fx:id="idadeDoadorListagem" prefWidth="149.0" text="Idade" />
+                        <TableColumn fx:id="generoDoadorListagem" prefWidth="128.0" text="Gênero" />
+                        <TableColumn fx:id="tipoSanguineoDoadorListagem" prefWidth="188.0" text="Tipo sanguíneo" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneExibirDoacoes" animated="false" layoutX="31.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Listar doações" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabelaDoacoes" layoutX="7.0" prefHeight="395.0" prefWidth="827.0">
+                    <columns>
+                      <TableColumn fx:id="cpfDoadorListagemDoacoesSanguineas" prefWidth="398.0" text="CPF do doador" />
+                      <TableColumn fx:id="dataDoacaoListagemDoacoesSanguineas" prefWidth="428.0" text="Data da doação" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneExibirAgendamentos" animated="false" layoutX="31.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Listar agendamentos" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabelaAgendamentos" prefHeight="395.0" prefWidth="835.0">
+                    <columns>
+                      <TableColumn fx:id="cpfDoadorListagemAgendamentos" prefWidth="416.0" text="CPF do doador" />
+                      <TableColumn fx:id="dataAgendamentoListagemAgendamentos" prefWidth="418.0" text="Data do agendamento" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneAtribuirFichaMedica" animated="false" layoutX="149.0" layoutY="127.0" prefHeight="427.0" prefWidth="654.0" text="Atribuir ficha médica a doação sanguínea" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <DatePicker fx:id="dateVerificarDoacao" layoutX="88.0" layoutY="73.0" promptText="Data da doação" />
+                  <TextField fx:id="txtCPFVerificarDoacao" layoutX="304.0" layoutY="73.0" promptText="CPF do doador" />
+                  <Label layoutX="105.0" layoutY="20.0" text="Busque por uma doação sanguínea para atribuir uma ficha médica:" />
+                  <Button fx:id="catchVerificarDoacao" layoutX="467.0" layoutY="104.0" mnemonicParsing="false" onMouseClicked="#buscarDoacao" text="Buscar" />
+                  <TitledPane fx:id="paneFichaMédica" animated="false" layoutX="65.0" layoutY="129.0" prefHeight="263.0" prefWidth="479.0" text="Atribuição de ficha Médica:" visible="false">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="catchFichaMedica" layoutX="384.0" layoutY="198.0" mnemonicParsing="false" onMouseClicked="#atribuirFichaMedicaADoacao" text="Atribuir" />
+                              <TextField fx:id="txtHemoglibina" layoutX="21.0" layoutY="22.0" promptText="Hemoglobina" />
+                              <TextField fx:id="txtTemperaturaCorporal" layoutX="21.0" layoutY="70.0" promptText="Temperatura Corporal" />
+                              <TextField fx:id="txtNumeroTubo" layoutX="21.0" layoutY="113.0" promptText="Numero de Tubo" />
+                              <TextField fx:id="txtVolumeSangue" layoutX="21.0" layoutY="156.0" promptText="Volume de Sangue" />
+                              <TextField fx:id="txtPeso" layoutX="208.0" layoutY="70.0" promptText="Peso" />
+                              <TextField fx:id="txtPulso" layoutX="208.0" layoutY="156.0" promptText="Pulso" />
+                              <TextField fx:id="txtAltura" layoutX="208.0" layoutY="113.0" promptText="Altura" />
+                              <TextField fx:id="txtPressaoArterial" layoutX="208.0" layoutY="22.0" promptText="Pressão Arterial" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneAtribuirFormularioMedula" animated="false" layoutX="135.0" layoutY="127.0" prefHeight="427.0" prefWidth="602.0" text="Atribuir formulário de doação de medula a doador" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtCpfAFDM" layoutX="40.0" layoutY="49.0" promptText="CPF do doador" />
+                  <Label layoutX="40.0" layoutY="26.0" text="Insira o CPF para verificação:">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="40.0" layoutY="95.0" mnemonicParsing="false" onAction="#abrirTelaFDM" text="OK" />
+                  <TitledPane fx:id="paneFormularioDM1" animated="false" layoutX="200.0" layoutY="95.0" prefHeight="269.0" prefWidth="386.0" text="Formulário de Doação de Medula" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="535.0">
+                           <children>
+                              <TextField fx:id="txtNacionalidade1" layoutX="14.0" layoutY="14.0" promptText="Nacionalidade" />
+                              <TextField fx:id="txtNomeMae1" layoutX="14.0" layoutY="53.0" prefHeight="25.0" prefWidth="189.0" promptText="Nome Completo da Mãe" />
+                              <TextField fx:id="txtNomePai1" layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="189.0" promptText="Nome Completo do Pai" />
+                              <TextField fx:id="txtEndereco1" layoutX="14.0" layoutY="128.0" promptText="Endereço" />
+                              <TextField fx:id="txtTelefone1" layoutX="14.0" layoutY="168.0" promptText="Telefone" />
+                              <ChoiceBox fx:id="opcRaca1" layoutX="224.0" layoutY="27.0" prefHeight="9.0" prefWidth="150.0" />
+                              <Label layoutX="323.0" layoutY="18.0" />
+                              <Button layoutX="308.0" layoutY="187.0" mnemonicParsing="false" onAction="#atribuirFDM" text="Salvar" />
+                              <Label layoutX="224.0" layoutY="10.0" text="Raça:">
+                                 <font>
+                                    <Font name="Courier New" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneArmazenarDoacao" animated="false" layoutX="27.0" layoutY="127.0" prefHeight="427.0" prefWidth="835.0" text="Armazenar doação" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="29.0" layoutY="38.0" text="Selecione a data da Doação:">
+                     <font>
+                        <Font name="Courier New Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateDoacao" layoutX="29.0" layoutY="70.0" />
+                  <Label layoutX="29.0" layoutY="122.0" text="Insira o CPF do doador :">
+                     <font>
+                        <Font name="Courier New Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCpfDoacao" layoutX="29.0" layoutY="155.0" promptText="CPF do doador" />
+                  <TitledPane fx:id="paneFormularioDoacao" animated="false" layoutX="293.0" layoutY="2.0" prefHeight="392.0" prefWidth="537.0" text="Formulario de Doação" visible="false">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="471.0">
+                           <children>
+                              <Label layoutX="37.0" layoutY="51.0" text="Fumante:">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="39.0" layoutY="269.0" text="Lactante:">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="252.0" layoutY="168.0" text="Gestante:">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="37.0" layoutY="168.0" text="Alcoolatra">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="252.0" layoutY="51.0" text="Diabetico:">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton layoutX="41.0" layoutY="100.0" mnemonicParsing="false" text="Sim">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupFumante" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="127.0" layoutY="102.0" mnemonicParsing="false" text="Não" toggleGroup="$groupFumante" />
+                              <RadioButton layoutX="30.0" layoutY="316.0" mnemonicParsing="false" text="Sim">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupLactante" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="30.0" layoutY="216.0" mnemonicParsing="false" text="Sim">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupAlcoolatra" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="252.0" layoutY="216.0" mnemonicParsing="false" text="Sim">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupGestante" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="252.0" layoutY="100.0" mnemonicParsing="false" text="Sim">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupDiabetico" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="116.0" layoutY="316.0" mnemonicParsing="false" text="Não" toggleGroup="$groupLactante" />
+                              <RadioButton layoutX="127.0" layoutY="216.0" mnemonicParsing="false" text="Não" toggleGroup="$groupAlcoolatra" />
+                              <RadioButton layoutX="350.0" layoutY="216.0" mnemonicParsing="false" text="Não" toggleGroup="$groupGestante" />
+                              <RadioButton layoutX="350.0" layoutY="100.0" mnemonicParsing="false" text="Não" toggleGroup="$groupDiabetico" />
+                              <Button fx:id="catchFormularioDM" layoutX="324.0" layoutY="264.0" mnemonicParsing="false" onAction="#salvarDoacao" onMouseClicked="#armazenarDoacao" text="Salvar" />
+                              <Label fx:id="aviso" layoutX="204.0" layoutY="317.0" text="Não se esqueça de levar os documentos!" visible="false">
+                                 <font>
+                                    <Font name="Courier New Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <Button layoutX="176.0" layoutY="231.0" mnemonicParsing="false" onAction="#checarDataCPFDoacao" text="OK" />
+               </children></AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="paneApagarCDM" animated="false" layoutX="309.0" layoutY="173.0" prefHeight="223.0" prefWidth="279.0" text="Remover Cadastro de doador de Medula" visible="false">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtCpfRemoverCDM" layoutX="21.0" layoutY="45.0" />
+                  <Label layoutX="21.0" layoutY="22.0" text="Cpf do Doador :" />
+                  <Button layoutX="185.0" layoutY="119.0" mnemonicParsing="false" onAction="#removerCDM" text="Remover" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Label fx:id="sair" layoutX="424.0" layoutY="90.0" onMouseClicked="#sair" text="Sair" textAlignment="CENTER" textFill="#4f14ff" underline="true" />
+   </children>
+</Pane>

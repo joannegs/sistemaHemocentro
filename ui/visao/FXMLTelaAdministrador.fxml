@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controlador.ControladorTelaAdministrador">
+   <children>
+      <ChoiceBox fx:id="opc" layoutX="332.0" layoutY="55.0" prefWidth="150.0" />
+      <Button fx:id="catchOpc" layoutX="490.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#abrirPaneEscolhido" text="Ok" />
+      <Label layoutX="318.0" layoutY="25.0" text="Escolha a opção que deseja realizar:" />
+      <TitledPane fx:id="opcAtualizarCadastroFuncionarios" animated="false" layoutX="27.0" layoutY="114.0" prefHeight="427.0" prefWidth="835.0" text="Atualização de cadastro de funcionários" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="opcAtualizacaoInformacoesFuncionario" layoutX="143.0" layoutY="50.0" prefWidth="150.0" />
+                  <Label layoutX="95.0" layoutY="14.0" text="Selecione a informação que deseja atualizar e o CPF do funcionário para confirmar a alteração:" />
+                  <Button fx:id="catchqualOpcAtualizarInformacao" layoutX="564.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#abrirPaneEscolhidoAlteracao" text="Ok" />
+                  <TitledPane fx:id="opcNome" animated="false" layoutX="229.0" layoutY="119.0" prefHeight="223.0" prefWidth="391.0" text="Nome" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novoNome" layoutX="101.0" layoutY="33.0" promptText="Novo nome" />
+                              <Button fx:id="atualizarNome" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarNomeFuncionario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcCpf" animated="false" layoutX="239.0" layoutY="129.0" prefHeight="223.0" prefWidth="391.0" text="CPF" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novoCPF" layoutX="101.0" layoutY="33.0" promptText="Novo CPF" />
+                              <Button fx:id="atualizarCpf" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarCpfFuncionario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcIdade" animated="false" layoutX="229.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Idade" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="atualizarIdade" layoutX="125.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#atualizarIdadeFuncionario" text="Atualizar idade" />
+                              <Label layoutX="82.0" layoutY="31.0" text="Ao atualizar sua idade, ela será" />
+                              <Label layoutX="113.0" layoutY="52.0" text="acrescida em um ano" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcSenha" animated="false" layoutX="229.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Senha" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="novaSenha" layoutX="101.0" layoutY="33.0" promptText="Nova senha" />
+                              <Button fx:id="atualizarSenha" layoutX="256.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarSenhaFuncionario" text="OK" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcGenero" animated="false" layoutX="239.0" layoutY="139.0" prefHeight="223.0" prefWidth="391.0" text="Gênero" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="atualizarGenero" layoutX="129.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#atualizarGeneroFuncionario" text="Alterar genero" />
+                              <Label layoutX="107.0" layoutY="26.0" text="Alterar seu gênero para " />
+                              <Label layoutX="130.0" layoutY="47.0" text="o gênero oposto:" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TextField fx:id="cpfChecagemFuncionario" layoutX="341.0" layoutY="50.0" promptText="CPF" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcContratarFuncionarios" animated="false" layoutX="24.0" layoutY="99.0" prefHeight="453.0" prefWidth="857.0" text="Contratação de funcionário" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="772.0">
+               <children>
+                  <TextField fx:id="nomeFuncionarioContratar" layoutX="306.0" layoutY="28.0" promptText="Nome" />
+                  <TextField fx:id="cpfFuncionarioContratar" layoutX="306.0" layoutY="72.0" promptText="CPF" />
+                  <TextField fx:id="idadeFuncionarioContratar" layoutX="306.0" layoutY="111.0" promptText="Idade" />
+                  <ChoiceBox fx:id="generoFuncionarioContratar" layoutX="306.0" layoutY="206.0" prefHeight="31.0" prefWidth="191.0" />
+                  <Button fx:id="cadastrarFuncionario" layoutX="473.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#cadastrarFuncionario" text="Cadastrar" />
+                  <Label layoutX="237.0" layoutY="211.0" text="Gênero:" />
+                  <PasswordField fx:id="senhaFuncionarioContratar" layoutX="306.0" layoutY="155.0" promptText="Senha" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcDemitirFuncionarios" animated="false" layoutX="39.0" layoutY="114.0" prefHeight="427.0" prefWidth="835.0" text="Apagar cadastro de funcionário" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="cpfFuncionarioDemitir" layoutX="308.0" layoutY="73.0" promptText="CPF" />
+                  <Label layoutX="204.0" layoutY="25.0" text="Digite o CPF do funcionário que deseja remover o cadastro:" />
+                  <Button fx:id="apagarCadastroFuncionario" layoutX="456.0" layoutY="121.0" mnemonicParsing="false" onMouseClicked="#apagarCadastroFuncionario" text="Remover" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcListarFuncionarios" animated="false" layoutX="31.0" layoutY="114.0" prefHeight="434.0" prefWidth="843.0" text="Listar funcionários" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabelaFuncionarios" prefHeight="393.0" prefWidth="835.0">
+                    <columns>
+                      <TableColumn fx:id="nomeFuncionarioListagem" prefWidth="231.0" text="Nome" />
+                      <TableColumn fx:id="cpfFuncionarioListagem" minWidth="0.0" prefWidth="272.0" text="CPF" />
+                        <TableColumn fx:id="idadeFuncionarioListagem" prefWidth="149.0" text="Idade" />
+                        <TableColumn fx:id="generoFuncionarioListagem" prefWidth="182.0" text="Gênero" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane fx:id="opcInformacoesSobreBancoDeSangue" animated="false" layoutX="23.0" layoutY="121.0" prefHeight="434.0" prefWidth="843.0" text="Informações sobre as doações sanguíneas" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="opcVisualizacaoBancoDeSangue" layoutX="309.0" layoutY="18.0" prefWidth="150.0" />
+                  <Button fx:id="catchOpcVisualizacaoBancoDeSangue" layoutX="467.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#abrirPaneOpcVisualizacaoBancoDeSangue" text="Ok" />
+                  <TitledPane fx:id="opcTiposSanguineos" animated="false" layoutX="24.0" layoutY="56.0" prefHeight="331.0" prefWidth="794.0" text="Dados relacionados ao tipo sanguíneo" visible="false">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="sangueA" disable="true" layoutX="80.0" layoutY="35.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="5.0" layoutY="40.0" text="Sangue A:" />
+                              <TextField fx:id="sangueAP" disable="true" layoutX="80.0" layoutY="94.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutY="99.0" text="Sangue A+:" />
+                              <TextField fx:id="sangueAN" disable="true" layoutX="80.0" layoutY="152.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="2.0" layoutY="157.0" text="Sangue A-:" />
+                              <TextField fx:id="sangueB" disable="true" layoutX="275.0" layoutY="36.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="40.0" text="Sangue B:" />
+                              <TextField fx:id="sangueBP" disable="true" layoutX="275.0" layoutY="95.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="191.0" layoutY="99.0" text="Sangue B+:" />
+                              <TextField fx:id="sangueBN" disable="true" layoutX="275.0" layoutY="153.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="157.0" text="Sangue B-:" />
+                              <TextField fx:id="sangueAB" disable="true" layoutX="472.0" layoutY="38.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="42.0" text="Sangue AB:" />
+                              <TextField fx:id="sangueABP" disable="true" layoutX="477.0" layoutY="97.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="101.0" text="Sangue AB+:" />
+                              <TextField fx:id="sangueABN" disable="true" layoutX="477.0" layoutY="155.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="391.0" layoutY="159.0" text="Sangue AB-:" />
+                              <TextField fx:id="sangueO" disable="true" layoutX="674.0" layoutY="39.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="41.0" text="Sangue O:" />
+                              <TextField fx:id="sangueOP" disable="true" layoutX="674.0" layoutY="98.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="588.0" layoutY="100.0" text="Sangue O+:" />
+                              <TextField fx:id="sangueON" disable="true" layoutX="674.0" layoutY="156.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="158.0" text="Sangue O-:" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcMulheres" animated="false" layoutX="24.0" layoutY="56.0" prefHeight="331.0" prefWidth="794.0" text="Dados relacionados as mulheres" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="msangueA" disable="true" layoutX="80.0" layoutY="35.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="5.0" layoutY="40.0" text="Sangue A:" />
+                              <TextField fx:id="msangueAP" disable="true" layoutX="80.0" layoutY="94.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutY="99.0" text="Sangue A+:" />
+                              <TextField fx:id="msangueAN" disable="true" layoutX="80.0" layoutY="152.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="2.0" layoutY="157.0" text="Sangue A-:" />
+                              <TextField fx:id="msangueB" disable="true" layoutX="275.0" layoutY="36.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="40.0" text="Sangue B:" />
+                              <TextField fx:id="msangueBP" disable="true" layoutX="275.0" layoutY="95.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="191.0" layoutY="99.0" text="Sangue B+:" />
+                              <TextField fx:id="msangueBN" disable="true" layoutX="275.0" layoutY="153.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="157.0" text="Sangue B-:" />
+                              <TextField fx:id="msangueAB" disable="true" layoutX="472.0" layoutY="38.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="42.0" text="Sangue AB:" />
+                              <TextField fx:id="msangueABP" disable="true" layoutX="477.0" layoutY="97.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="101.0" text="Sangue AB+:" />
+                              <TextField fx:id="msangueABN" disable="true" layoutX="477.0" layoutY="155.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="391.0" layoutY="159.0" text="Sangue AB-:" />
+                              <TextField fx:id="msangueO" disable="true" layoutX="674.0" layoutY="39.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="41.0" text="Sangue O:" />
+                              <TextField fx:id="msangueOP" disable="true" layoutX="674.0" layoutY="98.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="588.0" layoutY="100.0" text="Sangue O+:" />
+                              <TextField fx:id="msangueON" disable="true" layoutX="674.0" layoutY="156.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="158.0" text="Sangue O-:" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="opcHomens" animated="false" layoutX="24.0" layoutY="63.0" prefHeight="331.0" prefWidth="794.0" text="Dados relacionados ao aos homens" visible="false">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="hsangueA" disable="true" layoutX="80.0" layoutY="35.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="5.0" layoutY="40.0" text="Sangue A:" />
+                              <TextField fx:id="hsangueAP" disable="true" layoutX="80.0" layoutY="94.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutY="99.0" text="Sangue A+:" />
+                              <TextField fx:id="hsangueAN" disable="true" layoutX="80.0" layoutY="152.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="2.0" layoutY="157.0" text="Sangue A-:" />
+                              <TextField fx:id="hsangueB" disable="true" layoutX="275.0" layoutY="36.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="40.0" text="Sangue B:" />
+                              <TextField fx:id="hsangueBP" disable="true" layoutX="275.0" layoutY="95.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="191.0" layoutY="99.0" text="Sangue B+:" />
+                              <TextField fx:id="hsangueBN" disable="true" layoutX="275.0" layoutY="153.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="196.0" layoutY="157.0" text="Sangue B-:" />
+                              <TextField fx:id="hsangueAB" disable="true" layoutX="472.0" layoutY="38.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="42.0" text="Sangue AB:" />
+                              <TextField fx:id="hsangueABP" disable="true" layoutX="477.0" layoutY="97.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="388.0" layoutY="101.0" text="Sangue AB+:" />
+                              <TextField fx:id="hsangueABN" disable="true" layoutX="477.0" layoutY="155.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="391.0" layoutY="159.0" text="Sangue AB-:" />
+                              <TextField fx:id="hsangueO" disable="true" layoutX="674.0" layoutY="39.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="41.0" text="Sangue O:" />
+                              <TextField fx:id="hsangueOP" disable="true" layoutX="674.0" layoutY="98.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="588.0" layoutY="100.0" text="Sangue O+:" />
+                              <TextField fx:id="hsangueON" disable="true" layoutX="674.0" layoutY="156.0" prefHeight="21.0" prefWidth="104.0" />
+                              <Label layoutX="593.0" layoutY="158.0" text="Sangue O-:" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <Label fx:id="sair" layoutX="407.0" layoutY="89.0" onMouseClicked="#sair" text="Sair" textAlignment="CENTER" textFill="#4f14ff" underline="true" />
+   </children>
+</Pane>
